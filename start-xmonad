@@ -40,7 +40,7 @@ xcompmgr -n &
 xrandr --output LVDS-1 --auto --primary
 
 # Decrease screen resolution to 1920x1050 from full retina resolution on a Macbook Pro [RAMI TAIBAH]
-xrandr -s 1920x1200
+# xrandr -s 1920x1200
 
 # If we find that a screen is connected via VGA, activate it and position it
 # to the left of the primary screen.
@@ -89,7 +89,7 @@ stalonetray \
   --max-geometry 5x1-0+0 \
   --background '#000000' \
   --skip-taskbar \
-  --icon-size 24 \
+  --icon-size 40 \
   --kludges force_icons_size \
   --window-strut none \
 &
