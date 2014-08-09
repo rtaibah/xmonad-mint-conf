@@ -41,10 +41,10 @@ import Data.Ratio ((%))
 -}
 
 myModMask            = mod4Mask       -- changes the mod key to "super"
-myFocusedBorderColor = "#ff0000"      -- color of focused border
+myFocusedBorderColor = "#0078A8"      -- color of focused border
 myNormalBorderColor  = "#cccccc"      -- color of inactive border
 myBorderWidth        = 1              -- width of border around windows
-myTerminal           = "mate-terminal"-- which terminal software to use
+myTerminal           = "terminator"   -- which terminal software to use
 myIMRosterTitle      = "Buddy List"   -- title of roster on IM workspace
                                       -- use "Buddy List" for Pidgin, but
                                       -- "Contact List" for Empathy
@@ -55,17 +55,20 @@ myIMRosterTitle      = "Buddy List"   -- title of roster on IM workspace
   of text which xmonad is sending to xmobar via the DynamicLog hook.
 -}
 
-myTitleColor     = "#eeeeee"  -- color of window title
-myTitleLength    = 80         -- truncate window title to this length
-myCurrentWSColor = "#e6744c"  -- color of active workspace
-myVisibleWSColor = "#c185a7"  -- color of inactive workspace
-myUrgentWSColor  = "#cc0000"  -- color of workspace with 'urgent' window
-myCurrentWSLeft  = "["        -- wrap active workspace with these
+
+myTitleColor = "#FFBF37" -- color of window title
+myTitleLength = 80 -- truncate window title to this length
+myCurrentWSColor = "#90DAC7" -- color of active workspace
+myVisibleWSColor = "#38544d" -- color of inactive workspace
+myUrgentWSColor = "#cc0000" -- color of workspace with 'urgent' window
+myCurrentWSLeft = "[" -- wrap active workspace with these
 myCurrentWSRight = "]"
-myVisibleWSLeft  = "("        -- wrap inactive workspace with these
+myVisibleWSLeft = "(" -- wrap inactive workspace with these
 myVisibleWSRight = ")"
-myUrgentWSLeft  = "{"         -- wrap urgent workspace with these
+myUrgentWSLeft = "{" -- wrap urgent workspace with these
 myUrgentWSRight = "}"
+
+
 
 
 {-
@@ -95,7 +98,7 @@ myWorkspaces =
     "0:VM",    "Extr1", "Extr2"
   ]
 
-startupWorkspace = "5:Dev"  -- which workspace do you want to be on after launch?
+startupWorkspace = "1:Term"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -137,7 +140,7 @@ defaultLayouts = smartBorders(avoidStruts(
   -- the available space. Remaining windows tile to both the left and
   -- right of the master window. You can resize using "super-h" and
   -- "super-l".
-  -- ||| ThreeColMid 1 (3/100) (3/4)
+   ||| ThreeColMid 1 (3/100) (3/9)
 
   -- Circle layout places the master window in the center of the screen.
   -- Remaining windows appear in a circle around it
