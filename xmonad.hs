@@ -213,11 +213,15 @@ myKeyBindings =
     , ((myModMask .|. shiftMask, xK_l), spawn "gnome-screensaver-command -l")
     , ((myModMask .|. mod1Mask, xK_space), spawn "synapse")
     , ((myModMask, xK_u), focusUrgent)
-    , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")
-    , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
-    , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
-    , ((0, 0x1008ff03), spawn "xcalib -co 90 -a")
-    , ((0, 0x1008ff02), spawn "xcalib -c")
+    , ((0, 0x1008FF12), spawn "amixer -q set Master toggle") -- Mute 
+    , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")   -- Increase volume
+    , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")   -- Decrease volume
+    , ((0, 0x1008ff03), spawn "xcalib -co 90 -a")            -- Decrease brightness
+    , ((0, 0x1008ff02), spawn "xcalib -c")                   -- Reset brightness to max
+    , ((0, 0x1008ff06), spawn "~/kbdlight/kbdlight down")    -- Increase keyboard light
+    , ((0, 0x1008ff05), spawn "~/kbdlight/kbdlight up")      -- Decrease keyboard light
+    , ((0, 0x1008ff2a), spawn "sudo /usr/sbin/pm-suspend-hybrid") -- Logout and Suspend
+    , ((myModMask .|. shiftMask, xK_s), spawn "sudo /usr/sbin/pm-suspend") -- Suspend
   ]
 
 
