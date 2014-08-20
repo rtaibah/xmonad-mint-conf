@@ -43,7 +43,7 @@ import Data.Ratio ((%))
 myModMask            = mod4Mask       -- changes the mod key to "super"
 myFocusedBorderColor = "#0078A8"      -- color of focused border
 myNormalBorderColor  = "#cccccc"      -- color of inactive border
-myBorderWidth        = 3              -- width of border around windows
+myBorderWidth        = 1              -- width of border around windows
 myTerminal           = "terminator"   -- which terminal software to use
 myIMRosterTitle      = "Buddy List"   -- title of roster on IM workspace
                                       -- use "Buddy List" for Pidgin, but
@@ -92,9 +92,9 @@ myUrgentWSRight = "}"
 
 myWorkspaces =
   [
-    "7:Chat",  "8:Dbg", "9:Pix",
+    "7:Chat",  "8:Music", "9:Pix",
     "4:Docs",  "5:Dev", "6:Web",
-    "1:Term",  "2:Hub", "3:Mail",
+    "1:Term",  "2:Cal", "3:Mail",
     "0:VM",    "Extr1", "Extr2"
   ]
 
@@ -220,8 +220,8 @@ myKeyBindings =
     , ((0, 0x1008ff02), spawn "xcalib -c")                   -- Reset brightness to max
     , ((0, 0x1008ff06), spawn "~/kbdlight/kbdlight down")    -- Increase keyboard light
     , ((0, 0x1008ff05), spawn "~/kbdlight/kbdlight up")      -- Decrease keyboard light
-    , ((0, 0x1008ff2a), spawn "sudo /usr/sbin/pm-suspend-hybrid") -- Logout and Suspend
-    , ((myModMask .|. shiftMask, xK_s), spawn "sudo /usr/sbin/pm-suspend") -- Suspend
+    , ((0, 0x1008ff2a), spawn "sudo /usr/sbin/pm-suspend-hybrid") -- Hybrid suspend
+    , ((myModMask .|. shiftMask, xK_s), spawn "gnome-screensaver-command -l && sudo /usr/sbin/pm-suspend") -- Suspend
   ]
 
 
