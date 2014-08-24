@@ -95,7 +95,7 @@ myWorkspaces =
     "7:Chat",  "8:Music", "9:Pix",
     "4:Docs",  "5:Dev", "6:Web",
     "1:Term",  "2:Cal", "3:Mail",
-    "0:VM",    "Extr1", "Extr2"
+    "0:Tor",    "Torrent", "Diag"
   ]
 
 startupWorkspace = "1:Term"  -- which workspace do you want to be on after launch?
@@ -210,7 +210,6 @@ myKeyBindings =
     , ((myModMask, xK_a), sendMessage MirrorShrink)
     , ((myModMask, xK_z), sendMessage MirrorExpand)
     , ((myModMask, xK_p), spawn "synapse")
-    , ((myModMask .|. shiftMask, xK_l), spawn "gnome-screensaver-command -l")
     , ((myModMask .|. mod1Mask, xK_space), spawn "synapse")
     , ((myModMask, xK_u), focusUrgent)
     , ((0, 0x1008FF12), spawn "amixer -q set Master toggle") -- Mute 
@@ -220,7 +219,8 @@ myKeyBindings =
     , ((0, 0x1008ff02), spawn "xcalib -c")                   -- Reset brightness to max
     , ((0, 0x1008ff06), spawn "~/kbdlight/kbdlight down")    -- Increase keyboard light
     , ((0, 0x1008ff05), spawn "~/kbdlight/kbdlight up")      -- Decrease keyboard light
-    , ((0, 0x1008ff2a), spawn "sudo /usr/sbin/pm-suspend-hybrid") -- Hybrid suspend
+    , ((0, 0x1008ff2a), spawn "gnome-screensaver-command -l") --Lock screen 
+    , ((myModMask .|. shiftMask, xK_h), spawn "sudo /usr/sbin/pm-suspend-hybrid") -- Hybrid suspend
     , ((myModMask .|. shiftMask, xK_s), spawn "gnome-screensaver-command -l && sudo /usr/sbin/pm-suspend") -- Suspend
   ]
 
@@ -272,11 +272,6 @@ myManagementHooks :: [ManageHook]
 myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , resource =? "stalonetray" --> doIgnore
-  , className =? "rdesktop" --> doFloat
-  , (className =? "Komodo IDE") --> doF (W.shift "5:Dev")
-  , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2") --> doFloat
-  , (className =? "Komodo IDE" <&&> resource =? "Komodo_gotofile") --> doFloat
-  , (className =? "Komodo IDE" <&&> resource =? "Toplevel") --> doFloat
   , (className =? "Empathy") --> doF (W.shift "7:Chat")
   , (className =? "Pidgin") --> doF (W.shift "7:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
