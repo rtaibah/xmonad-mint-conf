@@ -140,7 +140,7 @@ defaultLayouts = smartBorders(avoidStruts(
   -- the available space. Remaining windows tile to both the left and
   -- right of the master window. You can resize using "super-h" and
   -- "super-l".
-   ||| ThreeColMid 1 (3/100) (3/9)
+  ||| ThreeColMid 1 (3/100) (3/9)
 
   -- Circle layout places the master window in the center of the screen.
   -- Remaining windows appear in a circle around it
@@ -222,6 +222,7 @@ myKeyBindings =
     , ((0, 0x1008ff2a), spawn "gnome-screensaver-command -l") --Lock screen 
     , ((myModMask .|. shiftMask, xK_h), spawn "sudo /usr/sbin/pm-suspend-hybrid") -- Hybrid suspend
     , ((myModMask .|. shiftMask, xK_s), spawn "gnome-screensaver-command -l && sudo /usr/sbin/pm-suspend") -- Suspend
+    , ((myModMask  , xK_p), spawn "import ~/pictures/screenshots/screenshot-`date +%H%M%S`.jpg") -- Hybrid suspend
   ]
 
 
