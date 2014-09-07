@@ -95,7 +95,7 @@ myWorkspaces =
     "7:Chat",  "8:Music", "9:Pix",
     "4:Docs",  "5:Dev", "6:Web",
     "1:Term",  "2:Cal", "3:Mail",
-    "0:Tor",    "Torrent", "Diag"
+    "0:VM",    "tor", "Diag"
   ]
 
 startupWorkspace = "1:Term"  -- which workspace do you want to be on after launch?
